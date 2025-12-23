@@ -99,15 +99,16 @@ export default function Home() {
           <BannerFirstPage settings={settings} />
           <div className="text-center mt-20">
             <p className="font-semibold font-sans text-2xl">
-              NY MORGEN stands for Elegance, Versatility, Reflection
-              of Personality.
+            <b> NY MORGEN </b> STANDS FOR ELEGANCE, VERSATILITY, AND REFLECTION OF PERSONALITY.
+
             </p>
             <p className="font-semibold font-sans text-2xl">
-              To design Ny Morgen products that would make women feel empowered
-              and men feel confident in their life.
+             TO DESIGN NY MORGEN PRODUCTS THAT MAKE WOMEN FEEL EMPOWERED AND MEN FEEL CONFIDENT IN THEIR LIFE
             </p>
           </div>
-          {best.length > 0 && <SelectedFavor best={best} settings={settings} />}
+          {promote2.length > 0 && (
+            <Accessories promote2={promote2} settings={settings} />
+          )}
           <Compromising />
           <SecondBanner />
           {promote1.length > 0 && (
@@ -115,9 +116,7 @@ export default function Home() {
           )}
           <CrossbodyBags />
           <Forside />
-          {promote2.length > 0 && (
-            <Accessories promote2={promote2} settings={settings} />
-          )}
+          <SelectedFavor best={best} settings={settings} />
           <LandingInsta />
         </>
       )}

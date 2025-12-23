@@ -16,10 +16,14 @@ function BannerFirstPage() {
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
       <div className="relative text-white pl-10 md:pl-20 lg:pl-32">
-        <h1 className="text-3xl md:text-5xl font-bold">News</h1>
-        <p className="text-lg md:text-2xl mt-2 italic mb-3">
-          EXPLORE ALL OUR NEWS
+        <h1 className="text-3xl md:text-5xl font-bold">New Arrivals</h1>
+        <div className="flex items-center">
+          <p className="text-lg md:text-2xl mt-2 italic mb-3">
+          Explore Our 
         </p>
+        <p style={{fontSize:'25px'}}> &nbsp; Ny Morgen</p>
+        </div>
+        
         <Link className="!z-50" href="/allproducts">
           <Button1 text="Shop Now" />
         </Link>

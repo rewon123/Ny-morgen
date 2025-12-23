@@ -34,7 +34,7 @@ export const categories = [
             link: "/Women/Small Leather Goods/Makeup & Toiletry bags",
           },
           {
-            name: "Phone cases",
+            name: "Sling bag",
             link: "/Women/Small Leather Goods/Phone Cases",
           },
         ],

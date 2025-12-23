@@ -8,11 +8,11 @@ function LandingInsta() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="mt-20">
+    <div className="">
       <div className="px-6 py-12">
-        <h2 className="text-center text-2xl font-semibold mb-6">
-          Follow us on Instagram
-        </h2>
+        <h5 className="text-center text-2xl font-semibold mb-6">
+          Follow us on Facebook & Instagram
+        </h5>
         <div className="flex flex-wrap justify-center gap-1">
           {insta.map((image, index) => (
             <div

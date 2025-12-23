@@ -77,6 +77,6 @@ export const productData = [
     "/images/g4.jpg",
     "/images/g5.jpg",
     "/images/g6.jpg",
-    "/images/g7.jpg",
-    "/images/g8.jpg",
+   "https://i.ibb.co.com/mC3jv7r8/Whats-App-Image-2025-12-20-at-03-48-58.jpg",
+    "https://i.ibb.co.com/rGK71c2g/Whats-App-Image-2025-12-20-at-03-48-59.jpg",
   ];

@@ -52,7 +52,7 @@ function AddProduct() {
   const handleAddColor = () => {
     if (
       colorInput.trim() !== "" &&
-      productInput.trim() !== "" &&
+      // productInput.trim() !== "" &&
       subnameInput.trim() !== ""
     ) {
       setColors([...colors, colorInput]);
@@ -60,13 +60,13 @@ function AddProduct() {
         ...pictures,
         {
           color: colorInput,
-          productCount: Number(productInput),
+          productCount: 5,
           subName: subnameInput,
           images: [],
         },
       ]);
       setColorInput("");
-      setProductInput("");
+      // setProductInput("");
       setSubnameInput("");
     }
   };
@@ -322,6 +322,7 @@ function AddProduct() {
                           {...register("brandName", {
                             required: "Brand name is required",
                           })}
+                          value='Ny Morgen'
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 transition-colors"
                         />
                         {errors.brandName && (
@@ -344,6 +345,7 @@ function AddProduct() {
                           {...register("subBrand", {
                             required: "Sub brand is required",
                           })}
+                          value=' '
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 transition-colors"
                         />
                         {errors.subBrand && (
@@ -395,6 +397,8 @@ function AddProduct() {
                         {...register("leatherCare", {
                           required: "Leather care is required",
                         })}
+                        value='Treat spills with a damp cloth and a mild soap solution, and then leave it to dry naturally. Do not use harsh solvents or cleaning products.
+'
                         rows="4"
                         className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 transition-colors"
                         placeholder="Describe leather care instructions..."
@@ -430,6 +434,7 @@ function AddProduct() {
                             required: "Height is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-10 transition-colors"
                         />
                         <span className="absolute left-3 top-2.5 text-gray-500 text-sm">
@@ -459,6 +464,7 @@ function AddProduct() {
                             required: "Width is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-10 transition-colors"
                         />
                         <span className="absolute left-3 top-2.5 text-gray-500 text-sm">
@@ -488,6 +494,7 @@ function AddProduct() {
                             required: "Depth is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-10 transition-colors"
                         />
                         <span className="absolute left-3 top-2.5 text-gray-500 text-sm">
@@ -528,6 +535,7 @@ function AddProduct() {
                             required: "Asking Price is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-8 transition-colors"
                         />
                       </div>
@@ -557,6 +565,7 @@ function AddProduct() {
                             required: "Main Price is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-8 transition-colors"
                         />
                       </div>
@@ -583,6 +592,7 @@ function AddProduct() {
                             required: "Discount is required",
                             valueAsNumber: true,
                           })}
+                          value={0}
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-10 transition-colors"
                         />
                         <span className="absolute right-3 top-2.5 text-gray-500 text-sm">
@@ -707,20 +717,20 @@ function AddProduct() {
                       </div>
 
                       <div>
-                        <label
+                        {/* <label
                           className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
                           htmlFor="product_input"
                         >
                           Quantity
-                        </label>
-                        <input
+                        </label> */}
+                        {/* <input
                           className="w-full bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2.5 transition-colors"
                           id="product_input"
                           type="number"
                           placeholder="Number of products"
-                          value={productInput}
-                          onChange={(e) => setProductInput(e.target.value)}
-                        />
+                          value='5'
+                          // onChange={(e) => setProductInput(e.target.value)}
+                        /> */}
                       </div>
                     </div>
 

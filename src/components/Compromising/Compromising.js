@@ -17,7 +17,7 @@ function Compromising() {
         </video>
         <div className="px-5">
           <h3 className="text-1xl md:text-2xl">
-            Morgen - Classic, refined, uncompromising.
+           <b> NY MORGEN </b> - Classic, refined, uncompromising.
           </h3>
           <p className="font-sans text-sm md:text-xl mt-2 font-light text-justify">
             A woman who selects a Ny Morgen bag embraces a sophisticated and{" "}

@@ -52,7 +52,8 @@ function Products3({ products }) {
                       : validUtility?.pictures?.[0]
                   }
                   className="w-full h-full object-cover rounded-md group-hover:opacity-100 transition-all duration-300 ease-in-out transform group-hover:scale-105"
-                style={{height:'550px'}}/>
+                style={{height:'348px'}}
+                />
 
                 {isSoldOut && (
                   <div className="absolute top-2 left-2 bg-gray-200 text-black px-1 text-[10px] py-1 rounded-md">
@@ -97,7 +98,8 @@ function Products3({ products }) {
                 {country !== "Bangladesh" &&
                   country !== "Denmark" &&
                   !euroCountries.includes(country) && (
-                    <span>$ {product?.askingPrice}</span>
+                    // <span>$ {product?.askingPrice}</span>
+                    <span>0.00</span>
                   )}
               </p>
             </Link>

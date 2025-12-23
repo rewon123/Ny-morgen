@@ -1,0 +1,38 @@
+.marqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 14px 0;
+  background: #0b1020;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.marquee {
+  display: inline-flex;
+  gap: 48px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-rtl 10s linear infinite;
+}
+
+.marquee.ltr {
+  animation: scroll-ltr 10s linear infinite;
+}
+
+.marquee span {
+  padding: 0 12px;
+}
+
+/* Right -> Left */
+@keyframes scroll-rtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Left -> Right */
+@keyframes scroll-ltr {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}

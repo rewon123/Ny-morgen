@@ -18,7 +18,8 @@ function SelectedSuede({ promote1, settings }) {
     <div className="px-6 py-8 container mx-auto mt-20">
       <h2 className="text-2xl font-thin mb-6">
         Selected {settings?.promote1?.subCategory} for{" "}
-        {settings?.promote1?.person}
+        {/* {settings?.promote1?.person} */}
+        All
       </h2>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">

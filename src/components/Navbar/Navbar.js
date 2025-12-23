@@ -84,7 +84,7 @@ function Navbar() {
 
   const handleLogOut = () => {
     logout()
-      .then((result) => {})
+      .then((result) => { })
       .catch((error) => {
         // console.log(error);
       });
@@ -115,7 +115,15 @@ function Navbar() {
   return (
     <>
       <div className="fixed top-0 left-0 w-full z-50 bg-white text-white shadow-sm back">
-        <Announcement settings={settings} />
+        {/* <Announcement settings={settings} /> */}
+        <div className="bg-gray-100 upper flex flex-col justify-center items-center text-black" >
+          <p className="py-2 tracking-wider text-sm" style={{ color: 'red', fontSize: '16px', width: '100%' }}>
+            <marquee width="100%" direction="right" >
+              Happy New Year 2026
+            </marquee>
+
+          </p>
+        </div>
         <div className="border-b-[1px] py-8" ref={navbarRef}>
           <div className="main-navbar ">
             <div className="container mx-auto">
@@ -132,37 +140,35 @@ function Navbar() {
                   </li>
                   <li
                     onClick={() => toggleDropdown("Shop")}
-                    className={`cursor-pointer border-b-2 ${
-                      activeDropdown === "Shop" ||
-                      activeDropdown === "women" ||
-                      activeDropdown === "men" ||
-                      activeDropdown === "kids"
+                    className={`cursor-pointer border-b-2 ${activeDropdown === "Shop" ||
+                        activeDropdown === "women" ||
+                        activeDropdown === "men" ||
+                        activeDropdown === "kids"
                         ? "border-black"
                         : "border-transparent"
-                    } hover:border-black`}
+                      } hover:border-black`}
                   >
-                    Shop
+                    <p style={{ fontSize: '20px' }}>   Shop</p>
                   </li>
                   <Link
                     onClick={() => toggleDropdown("contact")}
-                    className={`cursor-pointer border-b-2 ${
-                      activeDropdown === "contact"
+                    className={`cursor-pointer border-b-2 ${activeDropdown === "contact"
                         ? "border-black"
                         : "border-transparent"
-                    } hover:border-black`}
+                      } hover:border-black`}
                     href="/contact"
                   >
-                    Contact
+                    <p style={{ fontSize: '20px' }}>  Contact</p>
                   </Link>
                   <li
                     onClick={() => toggleDropdown("discover")}
-                    className={`cursor-pointer border-b-2 ${
-                      activeDropdown === "discover"
+                    className={`cursor-pointer border-b-2 ${activeDropdown === "discover"
                         ? "border-black"
                         : "border-transparent"
-                    } hover:border-black`}
+                      } hover:border-black`}
+
                   >
-                    Discover
+                    <p style={{ fontSize: '20px' }}> Discover</p>
                   </li>
                   {/* <li
                     onClick={() => toggleDropdown("journal")}
@@ -280,85 +286,83 @@ function Navbar() {
                 activeDropdown === "women" ||
                 activeDropdown === "men" ||
                 activeDropdown === "kids") && (
-                <motion.div
-                  variants={dropdownVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  className="container mx-auto"
-                >
-                  <div className="flex gap-10 mt-5 font-thin text-sm">
-                    <li
-                      onClick={() => toggleDropdown("women")}
-                      className={`list-none cursor-pointer border-b-2 ${
-                        activeDropdown === "women"
-                          ? "border-black"
-                          : "border-transparent"
-                      } hover:border-black`}
-                    >
-                      Women
-                    </li>
-                    <li
-                      onClick={() => toggleDropdown("men")}
-                      className={`list-none cursor-pointer border-b-2 ${
-                        activeDropdown === "men"
-                          ? "border-black"
-                          : "border-transparent"
-                      } hover:border-black`}
-                    >
-                      Men
-                    </li>
-                    <li
-                      onClick={() => toggleDropdown("kids")}
-                      className={`list-none cursor-pointer border-b-2 ${
-                        activeDropdown === "kids"
-                          ? "border-black"
-                          : "border-transparent"
-                      } hover:border-black`}
-                    >
-                      Kids
-                    </li>
-                  </div>
-                  <motion.div className="absolute left-0 right-0 mt-2 back border-b-[1px] py-3">
-                    <div className="container mx-auto">
-                      <div className="grid grid-cols-12 gap-5">
-                        <div className="col-span-8">
-                          <div className="grid grid-cols-3 gap-5">
-                            {categories[0].items.map((category) => (
-                              <div key={category.category}>
-                                <p className="text-white text-sm font-semibold">
-                                  {category?.category}
-                                </p>
-                                <ul className="space-y-2 mt-1">
-                                  {category?.items.map((item, index) => (
-                                    <li
-                                      key={index}
-                                      className="text-sm font-light cursor-pointe"
-                                    >
-                                      <Link
-                                        onClick={() => setActiveDropdown(null)}
-                                        className="!font-futara-sans !text-xs text-white hover:text-blue-300"
-                                        href={{
-                                          pathname: "/allproducts",
-                                          query: { take: item?.link },
-                                        }}
-                                      >
-                                        {item?.name}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        {/* <News />
-                        <Latest /> */}
-                      </div>
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="container mx-auto"
+                  >
+                    <div className="flex gap-10 mt-5 font-thin text-sm">
+                      <li
+                        onClick={() => toggleDropdown("women")}
+                        className={`list-none cursor-pointer border-b-2 ${activeDropdown === "women"
+                            ? "border-black"
+                            : "border-transparent"
+                          } hover:border-black`}
+                      >
+                        <p></p>
+                        Women
+                      </li>
+                      <li
+                        onClick={() => toggleDropdown("men")}
+                        className={`list-none cursor-pointer border-b-2 ${activeDropdown === "men"
+                            ? "border-black"
+                            : "border-transparent"
+                          } hover:border-black`}
+                      >
+                        Men
+                      </li>
+                      <li
+                        onClick={() => toggleDropdown("kids")}
+                        className={`list-none cursor-pointer border-b-2 ${activeDropdown === "kids"
+                            ? "border-black"
+                            : "border-transparent"
+                          } hover:border-black`}
+                      >
+                        Kids
+                      </li>
                     </div>
+                    <motion.div className="absolute left-0 right-0 mt-2 back border-b-[1px] py-3">
+                      <div className="container mx-auto">
+                        <div className="grid grid-cols-12 gap-5">
+                          <div className="col-span-8">
+                            <div className="grid grid-cols-3 gap-5">
+                              {categories[0].items.map((category) => (
+                                <div key={category.category}>
+                                  <p className="text-white text-sm font-semibold">
+                                    {category?.category}
+                                  </p>
+                                  <ul className="space-y-2 mt-1">
+                                    {category?.items.map((item, index) => (
+                                      <li
+                                        key={index}
+                                        className="text-sm font-light cursor-pointe"
+                                      >
+                                        <Link
+                                          onClick={() => setActiveDropdown(null)}
+                                          className="!font-futara-sans !text-xs text-white hover:text-blue-300"
+                                          href={{
+                                            pathname: "/allproducts",
+                                            query: { take: item?.link },
+                                          }}
+                                        >
+                                          {item?.name}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {/* <News />
+                        <Latest /> */}
+                        </div>
+                      </div>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              )}
+                )}
             </AnimatePresence>
             {activeDropdown === "women" && (
               <div className="absolute left-0 right-0 mt-2 back border-b-[1px] py-3">

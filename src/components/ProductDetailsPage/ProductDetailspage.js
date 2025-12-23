@@ -344,13 +344,14 @@ function ProductDetailspage({ id, color }) {
                 {pageDataI?.allData?.discount > 0 ? (
                   <span className="flex gap-3">
                     <span className="text-gold">
-                      {currencySymbol}{" "}
+                      0.0
+                      {/* {currencySymbol}{" "}
                       {Number.isInteger(showafterDiscount)
                         ? showafterDiscount
-                        : showafterDiscount.toFixed(2)}
+                        : showafterDiscount.toFixed(2)} */}
                     </span>
                     <span className="line-through">
-                      {currencySymbol} {showaskingPrice.toFixed(2)}
+                      {/* {currencySymbol} {showaskingPrice.toFixed(2)} */}
                     </span>
                   </span>
                 ) : (
@@ -363,12 +364,12 @@ function ProductDetailspage({ id, color }) {
                 )}
               </p>
               <hr className="mt-8 mb-5" />
-              <p className="text-2xl lg:text-3xl text-gray-700 tracking-widest mb-3">
+              <h1 className=" text-gray-700 tracking-widest mb-3">
                 DESCRIPTION
-              </p>
-              <div className="text-gray-700 text-sm">
+              </h1>
+              <div className="text-xl text-sm">
                 {descriptionLines?.map((line, index) => (
-                  <p className="font-futura-sans py-2.5" key={index}>
+                  <p className="" key={index}>
                     {line}
                   </p>
                 ))}
@@ -401,7 +402,7 @@ function ProductDetailspage({ id, color }) {
                   >
                     <div>
                       {pageDataI?.allData?.features?.map((feature, index) => (
-                        <li className="text-gray-700 text-sm" key={index}>
+                        <li className="text-xl text-sm" key={index}>
                           {feature}
                         </li>
                       ))}
@@ -474,7 +475,7 @@ function ProductDetailspage({ id, color }) {
                     <div>
                       {leathercare?.map((feature, index) => (
                         <p
-                          className="text-gray-700 font-futura-sans py-2.5 text-sm"
+                          className=" font-futura-sans py-2.5 text-sm"
                           key={index}
                         >
                           {feature}
