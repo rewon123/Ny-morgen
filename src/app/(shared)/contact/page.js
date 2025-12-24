@@ -75,13 +75,10 @@ function Contact() {
           <h1 className="title-font mb-4 text-2xl font-medium sm:text-3xl tracking-widest">
             CONTACT
           </h1>
-          <p className="mx-auto leading-relaxed lg:w-2/3 my-6">
+          <h1 className="" >
             Please fill out the form below or email at info@nymorgen.com
-          </p>
-          <p>
-            Studio Telephone:+45 91 42 91 64{" "}
-            <span className="italic">Office Hours Only</span>{" "}
-          </p>
+          </h1>
+        
         </div>
 
         <div className="mx-auto md:w-2/3 lg:w-1/2">

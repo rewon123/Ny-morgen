@@ -98,11 +98,11 @@ export default function Home() {
         <>
           <BannerFirstPage settings={settings} />
           <div className="text-center mt-20">
-            <p className="font-semibold font-sans text-2xl">
-            <b> NY MORGEN </b> STANDS FOR ELEGANCE, VERSATILITY, AND REFLECTION OF PERSONALITY.
+            <p className=" font-sans text-2xl">
+            <b className="font-semibold"> NY MORGEN </b> STANDS FOR ELEGANCE, VERSATILITY, AND REFLECTION OF PERSONALITY.
 
             </p>
-            <p className="font-semibold font-sans text-2xl">
+            <p className=" font-sans text-2xl">
              TO DESIGN NY MORGEN PRODUCTS THAT MAKE WOMEN FEEL EMPOWERED AND MEN FEEL CONFIDENT IN THEIR LIFE
             </p>
           </div>

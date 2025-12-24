@@ -11,7 +11,7 @@ function Footer() {
         <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-              <p className="max-w-xs">NY MORGEN Denmark office</p>
+              <p className="font-medium"> <b>NY MORGEN  DENMARK OFFICE </b> </p>
               <div className="flex flex-col mt-2 font-thin text-sm">
                 <Link href="" className="hover:opacity-75">
                   Greisvej 54,1th.2300 Copenhagen S, Denmark.
@@ -33,13 +33,13 @@ function Footer() {
             
             <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
               <div>
-              <p className="max-w-xs">NY MORGEN in BANGLADESH</p>
+              <p className="font-medium"> <b>    NY MORGEN IN BANGLADESH </b> </p>
               <div className="flex flex-col mt-2 font-thin text-sm">
                 <Link href="" className="hover:opacity-75">
                   295,Sher-E-Bangla Road, Jafrabad Pulpar,West Dhanmondi.
                 </Link>
                 <br />
-                <p className="max-w-xs">NY MORGEN development center</p>
+                <p className="font-medium"> <b>  NY MORGEN DEVELOPMENT CENTER</b> </p>
                 <Link href="" className="hover:opacity-75">
                   1st Gate Tannery , Dag No. 75-77, Hemayetpur 1347, Bangladesh
                 </Link>
@@ -54,7 +54,7 @@ function Footer() {
               </div>
             </div>
               <div className="ml-5 pl-5">
-                <p className="font-medium">Informaton</p>
+                <p className="font-medium"> <b>      Information </b></p>
                 <nav className="flex flex-col mt-2 space-y-2 text-sm font-thin">
                   <Link className="hover:opacity-75" href="/about">
                     About Us
@@ -77,7 +77,7 @@ function Footer() {
                 </nav>
               </div>
               <div>
-                <p className="font-medium">Customer Services</p>
+                <p className="font-medium"> <b>   CUSTOMER SERVICE </b>  </p>
                 <nav className="flex flex-col mt-2 space-y-2 text-sm font-thin">
                   
                   <Link className="hover:opacity-75" href="/contact">
@@ -91,7 +91,7 @@ function Footer() {
                   </Link> */}
                 </nav>
                 <div>
-                <p className="font-medium">Follow</p>
+                <p className="font-medium"> <b> FOLLOW  </b>    </p>
                 <nav className="flex flex-col mt-2 space-y-2 text-sm font-thin">
                   <Link
                     className="hover:opacity-75"
@@ -109,21 +109,6 @@ function Footer() {
                 </nav>
               </div>
               </div>
-              
-              {/* <div>
-                <p className="font-medium">Explore</p>
-                <nav className="flex flex-col mt-2 space-y-2 text-sm font-thin">
-                  <Link className="hover:opacity-75" href="">
-                    Stories
-                  </Link>
-                  <Link className="hover:opacity-75" href="">
-                    Collections
-                  </Link>
-                  <Link className="hover:opacity-75" href="">
-                    NY MORGEN Community
-                  </Link>
-                </nav>
-              </div> */}
               
             </div>
           </div>

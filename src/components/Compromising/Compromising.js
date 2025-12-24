@@ -15,24 +15,24 @@ function Compromising() {
           <source src="/Videos/strength5v.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="px-5">
+        <div className="px-5" style={{ maxWidth: "600px" }}>
           <h3 className="text-1xl md:text-2xl">
            <b> NY MORGEN </b> - Classic, refined, uncompromising.
           </h3>
           <p className="font-sans text-sm md:text-xl mt-2 font-light text-justify">
             A woman who selects a Ny Morgen bag embraces a sophisticated and{" "}
-            <br />
+            {/* <br /> */}
             understated style, free from logos yet rich in character. For her,{" "}
-            <br />
+            {/* <br /> */}
             it is not just an accessory but a lasting investment in timeless{" "}
-            <br />
+            {/* <br /> */}
             design and masterful craftsmanship. Each NY bag is thoughtfully
-            <br />
+            {/* <br /> */}
             designed to accompany her through shifting seasons and daily life,{" "}
-            <br />
+            {/* <br /> */}
             where practicality and elegance come together in perfect harmony.{" "}
-            <br />
-            With their distinctive, refined details, the bags reflect her <br />
+            {/* <br /> */}
+            With their distinctive, refined details, the bags reflect her 
             appreciation for quality and enduring aesthetics. <br />
           </p>
         </div>

@@ -71,8 +71,11 @@ function Responsibility() {
         <p className="text-gray-600 leading-6 sm:leading-7 text-sm sm:text-base">
           {content.paragraph2}
         </p>
-        <p className="text-gray-600 leading-6 sm:leading-7 text-sm sm:text-base mt-4">
-          {content.paragraph3}
+        <p className="bold leading-6 sm:leading-7 text-sm sm:text-base mt-4">
+          <b>
+            {content.paragraph3}
+          </b>
+
           strategy of Ny Morgen.
         </p>
       </motion.div>
@@ -83,8 +86,12 @@ function Responsibility() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        <p className="italic text-gray-500 text-sm sm:text-base">
+        <p className="bold text-sm sm:text-base">
+          <b>
+
           {content.quote1}
+
+          </b>
         </p>
       </motion.div>
     </div>
