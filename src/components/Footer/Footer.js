@@ -54,7 +54,7 @@ function Footer() {
               </div>
             </div>
               <div className="ml-5 pl-5">
-                <p className="font-medium"> <b>      Information </b></p>
+                <p className="font-medium"> <b> INFORMATION </b></p>
                 <nav className="flex flex-col mt-2 space-y-2 text-sm font-thin">
                   <Link className="hover:opacity-75" href="/about">
                     About Us

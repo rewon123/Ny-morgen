@@ -17,7 +17,7 @@ function LandingInsta() {
           {insta.map((image, index) => (
             <div
               key={index}
-              className="relative basis-1/3 sm:basis-1/4 md:basis-1/5 hover:opacity-40 transition-opacity"
+              className=" hover:opacity-40 transition-opacity"
               onClick={() => setSelectedImage(image)}
             >
               <Image

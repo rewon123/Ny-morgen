@@ -132,6 +132,7 @@ function Navbar() {
                   <li className="-pt-5">
                     <Link href="/">
                       <img
+                        onClick={() => toggleDropdown("Shop")}
                         className=" h-12 w-16 "
                         src="/white_icon.png"
                         alt="logo"
@@ -141,11 +142,11 @@ function Navbar() {
                   <li
                     onClick={() => toggleDropdown("Shop")}
                     className={`cursor-pointer border-b-2 ${activeDropdown === "Shop" ||
-                        activeDropdown === "women" ||
-                        activeDropdown === "men" ||
-                        activeDropdown === "kids"
-                        ? "border-black"
-                        : "border-transparent"
+                      activeDropdown === "women" ||
+                      activeDropdown === "men" ||
+                      activeDropdown === "kids"
+                      ? "border-black"
+                      : "border-transparent"
                       } hover:border-black`}
                   >
                     <p style={{ fontSize: '20px' }}>   Shop</p>
@@ -153,8 +154,8 @@ function Navbar() {
                   <Link
                     onClick={() => toggleDropdown("contact")}
                     className={`cursor-pointer border-b-2 ${activeDropdown === "contact"
-                        ? "border-black"
-                        : "border-transparent"
+                      ? "border-black"
+                      : "border-transparent"
                       } hover:border-black`}
                     href="/contact"
                   >
@@ -163,8 +164,8 @@ function Navbar() {
                   <li
                     onClick={() => toggleDropdown("discover")}
                     className={`cursor-pointer border-b-2 ${activeDropdown === "discover"
-                        ? "border-black"
-                        : "border-transparent"
+                      ? "border-black"
+                      : "border-transparent"
                       } hover:border-black`}
 
                   >
@@ -193,6 +194,8 @@ function Navbar() {
                 </ul>
                 {/* Logo */}
                 <Link
+                  onClick={() => toggleDropdown("Shop")}
+
                   href="/"
                   className="font-bold tracking-wider uppercase text-2xl font-sans cursor-pointer absolute left-1/2 transform -translate-x-1/2"
                 >
@@ -297,8 +300,8 @@ function Navbar() {
                       <li
                         onClick={() => toggleDropdown("women")}
                         className={`list-none cursor-pointer border-b-2 ${activeDropdown === "women"
-                            ? "border-black"
-                            : "border-transparent"
+                          ? "border-black"
+                          : "border-transparent"
                           } hover:border-black`}
                       >
                         <p></p>
@@ -307,8 +310,8 @@ function Navbar() {
                       <li
                         onClick={() => toggleDropdown("men")}
                         className={`list-none cursor-pointer border-b-2 ${activeDropdown === "men"
-                            ? "border-black"
-                            : "border-transparent"
+                          ? "border-black"
+                          : "border-transparent"
                           } hover:border-black`}
                       >
                         Men
@@ -316,8 +319,8 @@ function Navbar() {
                       <li
                         onClick={() => toggleDropdown("kids")}
                         className={`list-none cursor-pointer border-b-2 ${activeDropdown === "kids"
-                            ? "border-black"
-                            : "border-transparent"
+                          ? "border-black"
+                          : "border-transparent"
                           } hover:border-black`}
                       >
                         Kids
