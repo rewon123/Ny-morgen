@@ -45,7 +45,7 @@ const futuraSans = localFont({
 });
 
 export const metadata = {
-  title: "Ny Morgan",
+  title: "Ny Morgen",
   description: "Created by Ny morgen",
 };
 
