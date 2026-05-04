@@ -1,16 +1,28 @@
 import localFont from "next/font/local";
-import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/hooks/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import SettingsProvider from "@/hooks/SettingsProvider";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
+const openSans = localFont({
+  src: [
+    {
+      path: "./fonts/OpenSans-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/OpenSans-Regular.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/OpenSans-Regular.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-open-sans",
-  adjustFontFallback: false,
-  display: "swap",
-  weight: ["500", "700"],
 });
 
 const futuraSans = localFont({

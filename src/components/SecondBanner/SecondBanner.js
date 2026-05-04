@@ -10,8 +10,8 @@ function SecondBanner() {
         src="/images/pseudo.jpg"
         alt="Suede Collection"
         fill
-        priority
-        quality={70} // compress
+        quality={55}
+        sizes="100vw"
         className="object-cover"
       />
 

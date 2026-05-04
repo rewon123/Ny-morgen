@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Splide from "@splidejs/splide";
 import "@splidejs/splide/css";
 import "./SliderComponent.css";
+import {
+  getSafeImageSrc,
+  shouldBypassNextImageOptimization,
+} from "@/utils/imageUtils";
 
 const SliderComponent = ({ images }) => {
   useEffect(() => {
@@ -65,7 +70,22 @@ const SliderComponent = ({ images }) => {
           <ul className="splide__list">
             {images.map((image, index) => (
               <li className="splide__slide" key={`main-${index}`}>
-                <img src={image} alt={`Slide ${index + 1}`} />
+                {(() => {
+                  const imageSrc = getSafeImageSrc(image);
+                  return (
+                <div className="relative h-full w-full">
+                  <Image
+                    src={imageSrc}
+                    alt={`Slide ${index + 1}`}
+                    fill
+                    priority={index === 0}
+                    unoptimized={shouldBypassNextImageOptimization(imageSrc)}
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </div>
+                  );
+                })()}
               </li>
             ))}
           </ul>
@@ -77,7 +97,21 @@ const SliderComponent = ({ images }) => {
           <ul className="splide__list">
             {images.map((image, index) => (
               <li className="splide__slide" key={`thumbnail-${index}`}>
-                <img src={image} alt={`Thumbnail ${index + 1}`} />
+                {(() => {
+                  const imageSrc = getSafeImageSrc(image);
+                  return (
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={imageSrc}
+                        alt={`Thumbnail ${index + 1}`}
+                        fill
+                        unoptimized={shouldBypassNextImageOptimization(imageSrc)}
+                        sizes="104px"
+                        className="object-cover"
+                      />
+                    </div>
+                  );
+                })()}
               </li>
             ))}
           </ul>

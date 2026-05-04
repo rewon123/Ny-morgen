@@ -1,8 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoAdd } from "react-icons/io5";
+import {
+  getSafeImageSrc,
+  shouldBypassNextImageOptimization,
+} from "@/utils/imageUtils";
 
 function Products1({ products }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -25,6 +30,11 @@ function Products1({ products }) {
           const isSoldOut = !validUtility;
 
           isSoldOut ? (validUtility = product?.utilities[0]) : validUtility;
+          const imageSrc = getSafeImageSrc(
+            hoveredIndex === index && validUtility?.pictures?.[1]
+              ? validUtility?.pictures[1]
+              : validUtility?.pictures?.[0]
+          );
           // console.log("log ", validUtility);
 
           return (
@@ -41,17 +51,18 @@ function Products1({ products }) {
                   <div
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
-                    className="relative"
+                    className="relative overflow-hidden rounded-md"
                   >
-                    <img
-                      alt={validUtility?.productName || product?.productName}
-                      src={
-                        hoveredIndex === index && validUtility?.pictures?.[1]
-                          ? validUtility?.pictures[1]
-                          : validUtility?.pictures?.[0]
-                      }
-                      className="w-full h-[300px] object-cover rounded-md  group-hover:opacity-100 transition-all duration-300 ease-in-out transform group-hover:scale-105"
-                    />
+                    <div className="relative h-[300px] w-full">
+                      <Image
+                        alt={validUtility?.productName || product?.productName}
+                        src={imageSrc}
+                        fill
+                        unoptimized={shouldBypassNextImageOptimization(imageSrc)}
+                        sizes="(min-width: 1280px) 16vw, (min-width: 1024px) 20vw, (min-width: 768px) 28vw, 45vw"
+                        className="object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                      />
+                    </div>
 
                     {isSoldOut && (
                       <div className="absolute top-2 left-2 bg-gray-200 text-black px-1 text-[10px] py-1 rounded-md">

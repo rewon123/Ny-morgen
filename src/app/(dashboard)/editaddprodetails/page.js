@@ -4,6 +4,7 @@ import Button3 from "@/containers/common/Button3/Button3";
 import { categories } from "@/Data/Menu";
 import AdminRoute from "@/Wrapper/AdminRoute";
 import axios from "axios";
+import { normalizeImageUrl } from "@/utils/imageUtils";
 import { useParams, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -138,9 +139,9 @@ function AdminProductEdit() {
                   `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMGBB_API_KEY}`,
                   formData
                 );
-                return response.data?.data?.url || null;
+                return normalizeImageUrl(response.data?.data?.url) || null;
               }
-              return picture;
+              return normalizeImageUrl(picture);
             })
           );
           return { ...utility, pictures: uploadedPictures.filter(Boolean) };

@@ -1,3 +1,5 @@
+import { normalizeImageUrl } from "@/utils/imageUtils";
+
 export const imageUpload = async image => {
     // console.log(image)
     if (image) {
@@ -10,6 +12,9 @@ export const imageUpload = async image => {
         body: formData,
       })
       const data = await response.json()
+      if (data?.data?.url) {
+        data.data.url = normalizeImageUrl(data.data.url)
+      }
       return data
     }
   }

@@ -1,9 +1,10 @@
-'use client'
+"use client";
+
+import React, { Suspense } from "react";
 import ProductDetailspage from "@/components/ProductDetailsPage/ProductDetailspage";
 import { useSearchParams } from "next/navigation";
-import React from "react";
 
-function ProductDetails() {
+function ProductDetailsContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const color = searchParams.get("color");
@@ -14,4 +15,11 @@ function ProductDetails() {
     </>
   );
 }
-export default ProductDetails;
+
+export default function ProductDetails() {
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <ProductDetailsContent />
+    </Suspense>
+  );
+}

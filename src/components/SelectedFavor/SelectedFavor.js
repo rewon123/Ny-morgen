@@ -4,8 +4,13 @@ import Button2 from "@/containers/common/Button2/Button2";
 import euroCountries from "@/Data/Countries";
 import { productData } from "@/Data/ProductData";
 import { SettingsContext } from "@/hooks/SettingsProvider";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
+import {
+  getSafeImageSrc,
+  shouldBypassNextImageOptimization,
+} from "@/utils/imageUtils";
 
 function SelectedFavor({ best, settings }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -28,6 +33,10 @@ function SelectedFavor({ best, settings }) {
             if (isSoldOut) {
               validUtility = product?.utilities[0];
             }
+            const primaryImageSrc = getSafeImageSrc(validUtility?.pictures?.[0]);
+            const hoverImageSrc = getSafeImageSrc(
+              validUtility?.pictures?.[1] || validUtility?.pictures?.[0]
+            );
             // console.log(validUtility);
 
             return (
@@ -42,17 +51,23 @@ function SelectedFavor({ best, settings }) {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div className="relative w-full h-72">
-                  <img
-                    src={validUtility?.pictures[0]}
+                  <Image
+                    src={primaryImageSrc}
                     alt={validUtility?.productName}
-                    className={`w-full h-full object-cover rounded-t-md transition-opacity duration-500 ${
+                    fill
+                    unoptimized={shouldBypassNextImageOptimization(primaryImageSrc)}
+                    sizes="(min-width: 1024px) 18rem, (min-width: 768px) 30vw, 90vw"
+                    className={`object-cover rounded-t-md transition-opacity duration-500 ${
                       hoveredIndex === index ? "opacity-0" : "opacity-100"
                     }`}
                   />
-                  <img
-                    src={validUtility?.pictures[1]}
+                  <Image
+                    src={hoverImageSrc}
                     alt={`${validUtility?.productName} hover`}
-                    className={`absolute top-0 left-0 w-full h-full object-cover rounded-t-md transition-opacity duration-500 ${
+                    fill
+                    unoptimized={shouldBypassNextImageOptimization(hoverImageSrc)}
+                    sizes="(min-width: 1024px) 18rem, (min-width: 768px) 30vw, 90vw"
+                    className={`absolute top-0 left-0 object-cover rounded-t-md transition-opacity duration-500 ${
                       hoveredIndex === index ? "opacity-100" : "opacity-0"
                     }`}
                   />
@@ -80,38 +95,7 @@ function SelectedFavor({ best, settings }) {
                     <h1 className="text-xs font-thin change-color">
                       {product?.productName}
                     </h1>
-                    <p className="text-xs">
-                      {country === "Bangladesh" && (
-                        <span>
-                          BDT{" "}
-                          {Math.round(
-                            product?.askingPrice * settings?.conversionRateBDT
-                          )}
-                        </span>
-                      )}
-                      {country === "Denmark" && (
-                        <span>
-                          kr.{" "}
-                          {Math.round(
-                            product?.askingPrice *
-                              settings?.conversionRateDanish
-                          )}
-                        </span>
-                      )}
-                      {euroCountries.includes(country) && (
-                        <span>
-                          €{" "}
-                          {Math.round(
-                            product?.askingPrice * settings?.conversionRateEuro
-                          )}
-                        </span>
-                      )}
-                      {country !== "Bangladesh" &&
-                        country !== "Denmark" &&
-                        !euroCountries.includes(country) && (
-                          <span>${product?.askingPrice}</span>
-                        )}
-                    </p>
+                   
                   </div>
                   {product?.sales > 5 && (
                     <p className="text-xs mt-1 text-gray-700">

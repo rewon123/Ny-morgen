@@ -3,9 +3,14 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./RelatedSlider.css";
+import Image from "next/image";
 import Link from "next/link";
 import { SettingsContext } from "@/hooks/SettingsProvider";
 import { getCurrencySymbol, convertPrice } from "@/utils/currencyUtils";
+import {
+  getSafeImageSrc,
+  shouldBypassNextImageOptimization,
+} from "@/utils/imageUtils";
 
 const RelatedProductSlider = ({ productInfo, pictures }) => {
   const { country, settings } = useContext(SettingsContext);
@@ -57,6 +62,9 @@ const RelatedProductSlider = ({ productInfo, pictures }) => {
       >
         {pictures.map((src, index) => {
           const product = productInfo[index];
+          const imageSrc = getSafeImageSrc(
+            hoveredIndex === index ? src?.[1] || src?.[0] : src?.[0]
+          );
           const currencySymbol = getCurrencySymbol(country);
           const originalPrice = getFormattedPrice(product?.askingPrice);
           const discountedPrice = getFormattedPrice(
@@ -79,15 +87,19 @@ const RelatedProductSlider = ({ productInfo, pictures }) => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <img
-                    style={{
-                      transition: "opacity 0.3s ease",
-                      opacity: hoveredIndex === index ? 0.9 : 1,
-                    }}
-                    src={hoveredIndex === index ? src[1] : src[0]}
-                    alt={`Slide ${index + 1}`}
-                    className="w-full h-[25rem] object-cover rounded-sm shadow-sm"
-                  />
+                  <div className="relative h-[25rem] w-full overflow-hidden rounded-sm shadow-sm">
+                    <Image
+                      src={imageSrc}
+                      alt={`Slide ${index + 1}`}
+                      fill
+                      unoptimized={shouldBypassNextImageOptimization(imageSrc)}
+                      sizes="(min-width: 1200px) 25vw, (min-width: 768px) 33vw, 90vw"
+                      className="object-cover transition-opacity duration-300"
+                      style={{
+                        opacity: hoveredIndex === index ? 0.9 : 1,
+                      }}
+                    />
+                  </div>
                   {product?.discount > 0 && (
                     <div
                       style={{ backgroundColor: "#be834f" }}

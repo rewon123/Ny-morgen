@@ -23,9 +23,10 @@ function LandingInsta() {
               <Image
                 src={image}
                 alt={`Gallery image ${index + 1}`}
-                width={300} // thumbnail width
-                height={300} // thumbnail height
-                quality={70} // compress
+                width={300}
+                height={300}
+                quality={55}
+                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 45vw"
                 className="w-full h-[18rem] cursor-pointer object-cover rounded-lg"
               />
             </div>
@@ -44,9 +45,10 @@ function LandingInsta() {
               <Image
                 src={selectedImage}
                 alt="Enlarged view"
-                width={1200} // modal size
+                width={1200}
                 height={800}
-                quality={80} // keep a bit higher for large view
+                quality={70}
+                sizes="90vw"
                 className="w-full max-w-4xl h-[40rem] object-cover"
               />
             </div>

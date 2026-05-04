@@ -10,7 +10,8 @@ function BannerFirstPage() {
         alt="Background"
         fill
         priority
-        quality={70} // reduce quality to save bandwidth
+        quality={60}
+        sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>

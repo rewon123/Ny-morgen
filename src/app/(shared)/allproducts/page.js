@@ -1,5 +1,6 @@
 "use client";
 import React, {
+  Suspense,
   useEffect,
   useRef,
   useState,
@@ -17,7 +18,7 @@ import FilterDrawer from "@/containers/common/FilterDrawer/FilterDrawer";
 import SortByDrawer from "@/containers/common/SortByDrawer/SortByDrawer";
 import { useRouter, useSearchParams } from "next/navigation";
 
-function AllProducts() {
+function AllProductsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -116,7 +117,7 @@ function AllProducts() {
     };
 
     fetchInitialProducts();
-  }, [taking, search]);
+  }, [taking]);
 
   //   useEffect(() => {
   //     const fetchFilteredProducts = async () => {
@@ -292,4 +293,10 @@ function AllProducts() {
   );
 }
 
-export default AllProducts;
+export default function AllProducts() {
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <AllProductsContent />
+    </Suspense>
+  );
+}

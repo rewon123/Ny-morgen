@@ -26,12 +26,13 @@ function CrossbodyBags() {
           </Link>
         </div>
         <div>
-          <img
+          <Image
             src="https://i.ibb.co.com/zVbffXpb/Whats-App-Image-2025-12-20-at-03-47-44.jpg"
             alt="Crossbody bags"
-            width={640}   // set proper width
-            height={640}  // set proper height
-            quality={70}  // compress image
+            width={640}
+            height={640}
+            quality={60}
+            sizes="(min-width: 1024px) 40rem, 100vw"
             className="w-[40rem] h-auto"
           />
         </div>

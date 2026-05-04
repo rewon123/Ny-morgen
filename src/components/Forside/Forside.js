@@ -11,9 +11,10 @@ function Forside() {
           <Image
             src="https://i.ibb.co.com/rGK71c2g/Whats-App-Image-2025-12-20-at-03-48-59.jpg"
             alt="Work bags"
-            width={640}      // set an appropriate width
-            height={640}     // set an appropriate height
-            quality={70}     // compress to save bandwidth
+            width={640}
+            height={640}
+            quality={60}
+            sizes="(min-width: 1024px) 40rem, 100vw"
             className="w-[40rem] h-auto"
           />
         </div>

@@ -19,6 +19,7 @@ import { AuthContext } from "@/hooks/AuthProvider";
 import { SettingsContext } from "@/hooks/SettingsProvider";
 import { convertPrice, getCurrencySymbol } from "@/utils/currencyUtils";
 import { X } from "lucide-react";
+import { getSafeImageSrc } from "@/utils/imageUtils";
 function ProductDetailspage({ id, color }) {
   const { country, settings } = useContext(SettingsContext);
   const [data, setData] = useState(null);
@@ -298,8 +299,10 @@ function ProductDetailspage({ id, color }) {
                 className={`h-20 w-16 cursor-pointer ${
                   activeIndex === index ? "border-2 border-blue-500" : ""
                 }`}
-                src={image}
+                src={getSafeImageSrc(image)}
                 alt={pageDataI.utility.name}
+                loading="lazy"
+                decoding="async"
                 onClick={() => {
                   document
                     .querySelector(`.middle-image[data-index="${index}"]`)
@@ -317,8 +320,10 @@ function ProductDetailspage({ id, color }) {
                 className="w-full middle-image cursor-pointer hover:opacity-90 transition-opacity"
                 key={index}
                 data-index={index}
-                src={image}
+                src={getSafeImageSrc(image)}
                 alt={pageDataI.utility.name}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
                 onClick={() => openModal(image, index)}
               />
             ))}
@@ -345,13 +350,13 @@ function ProductDetailspage({ id, color }) {
                   <span className="flex gap-3">
                     <span className="text-gold">
                       0.0
-                      {/* {currencySymbol}{" "}
+                      {currencySymbol}{" "}
                       {Number.isInteger(showafterDiscount)
                         ? showafterDiscount
-                        : showafterDiscount.toFixed(2)} */}
+                        : showafterDiscount.toFixed(2)}
                     </span>
                     <span className="line-through">
-                      {/* {currencySymbol} {showaskingPrice.toFixed(2)} */}
+                      {currencySymbol} {showaskingPrice.toFixed(2)}
                     </span>
                   </span>
                 ) : (

@@ -2,9 +2,14 @@
 
 import euroCountries from "@/Data/Countries";
 import { SettingsContext } from "@/hooks/SettingsProvider";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { IoAdd } from "react-icons/io5";
+import {
+  getSafeImageSrc,
+  shouldBypassNextImageOptimization,
+} from "@/utils/imageUtils";
 
 function Products2({ products }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -27,6 +32,11 @@ function Products2({ products }) {
           );
           const isSoldOut = !validUtility;
           isSoldOut ? (validUtility = product?.utilities[0]) : validUtility;
+          const imageSrc = getSafeImageSrc(
+            hoveredIndex === index && validUtility?.pictures?.[1]
+              ? validUtility?.pictures[1]
+              : validUtility?.pictures?.[0]
+          );
 
           return (
             <Link
@@ -41,17 +51,18 @@ function Products2({ products }) {
               <div
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
-                className="relative"
+                className="relative overflow-hidden rounded-md"
               >
-                <img
-                  alt={validUtility?.productName || product?.productName}
-                  src={
-                    hoveredIndex === index && validUtility?.pictures?.[1]
-                      ? validUtility?.pictures[1]
-                      : validUtility?.pictures?.[0]
-                  }
-                  className="w-full h-full object-cover rounded-md group-hover:opacity-100 transition-all duration-300 ease-in-out transform group-hover:scale-105"style={{height: "330px"}}
-                />
+                <div className="relative h-[330px] w-full">
+                  <Image
+                    alt={validUtility?.productName || product?.productName}
+                    src={imageSrc}
+                    fill
+                    unoptimized={shouldBypassNextImageOptimization(imageSrc)}
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 30vw, (min-width: 768px) 45vw, 92vw"
+                    className="object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                  />
+                </div>
 
                 {isSoldOut && (
                   <div className="absolute top-2 left-2 bg-gray-200 text-black px-1 text-[10px] py-1 rounded-md">
@@ -68,7 +79,7 @@ function Products2({ products }) {
                 {validUtility?.productName || product?.productName} -{" "}
                 {validUtility?.subName}
               </p>
-              <p className="pt-1 text-center text-xs">
+              {/* <p className="pt-1 text-center text-xs">
                 {country === "Bangladesh" && (
                   <span>
                     BDT{" "}
@@ -98,7 +109,7 @@ function Products2({ products }) {
                   !euroCountries.includes(country) && (
                     <span>$ {product?.askingPrice}</span>
                   )}
-              </p>
+              </p> */}
             </Link>
           );
         })}
