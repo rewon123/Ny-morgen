@@ -345,29 +345,7 @@ function ProductDetailspage({ id, color }) {
               <p className="uppercase pt-1 text-2xl tracking-widest text-gray-700">
                 {pageDataI?.allData?.subBrand}
               </p>
-              <p className="pt-5 text-gray-500 tracking-wider">
-                {pageDataI?.allData?.discount > 0 ? (
-                  <span className="flex gap-3">
-                    <span className="text-gold">
-                      0.0
-                      {currencySymbol}{" "}
-                      {Number.isInteger(showafterDiscount)
-                        ? showafterDiscount
-                        : showafterDiscount.toFixed(2)}
-                    </span>
-                    <span className="line-through">
-                      {currencySymbol} {showaskingPrice.toFixed(2)}
-                    </span>
-                  </span>
-                ) : (
-                  <>
-                    {currencySymbol}{" "}
-                    {Number.isInteger(showafterDiscount)
-                      ? showafterDiscount
-                      : showafterDiscount.toFixed(2)}
-                  </>
-                )}
-              </p>
+              
               <hr className="mt-8 mb-5" />
               <h1 className=" text-gray-700 tracking-widest mb-3">
                 DESCRIPTION

@@ -14,7 +14,7 @@ export const categories = [
           { name: "Shoulder", link: "/Women/Bags/Shoulder" },
           { name: "Shoppers", link: "/Women/Bags/Shoppers" },
           { name: "Signature", link: "/Women/Bags/Signature" },
-          // { name: "Suede", link: "/Women/Bags/Suede" },
+          
         ],
       },
       {
@@ -36,6 +36,10 @@ export const categories = [
           {
             name: "Sling bag",
             link: "/Women/Small Leather Goods/Phone Cases",
+          },
+          {
+            name: "Gift Items",
+            link: "/Women/Small Leather Goods/Gift Items",
           },
         ],
       },
@@ -119,6 +123,10 @@ export const categories = [
           {
             name: "Passport cases",
             link: "/Men/Small Leather Goods/Passport cases",
+          },
+           {
+            name: "Gift Items",
+            link: "/Men/Small Leather Goods/Gift Items",
           },
         ],
       },

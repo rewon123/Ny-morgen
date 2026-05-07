@@ -99,11 +99,11 @@ function Footer() {
                   >
                     Facebook
                   </Link>
-                  <Link className="hover:opacity-75" href="">
+                  <Link className="hover:opacity-75" href="https://www.instagram.com/ny_morgen/">
                     Instagram
                   </Link>
                  
-                  <Link className="hover:opacity-75" href="">
+                  <Link className="hover:opacity-75" href="https://www.linkedin.com/in/ny-morgen-34765b3b1/">
                     Linkedin
                   </Link>
                 </nav>

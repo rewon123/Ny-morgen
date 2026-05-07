@@ -64,7 +64,8 @@ function About() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
-        <p className="text-gray-600 leading-6 sm:leading-7 text-sm sm:text-base">
+        <p className="text-gray-600 leading-6 sm:leading-7 text-sm sm:text-base" style={{textAlign:"center"}}
+        >
           {content.paragraph2}
         </p>
       </motion.div>
